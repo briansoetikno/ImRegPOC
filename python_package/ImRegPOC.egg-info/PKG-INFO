@@ -1,4 +1,4 @@
-Metadata-Version: 1.1
+Metadata-Version: 2.1
 Name: ImRegPOC
 Version: 1.0
 Summary: Image Registration Tool using 2D FFT
@@ -6,7 +6,6 @@ Home-page: https://github.com/YoshiRi/ImRegPOC
 Author: Yoshi Ri
 Author-email: yoshiyoshidetteiu@gmail.com
 License: BSD License
-Description: UNKNOWN
 Keywords: Image Registration,POC,FFT
 Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
@@ -15,3 +14,6 @@ Classifier: License :: OSI Approved :: BSD License
 Classifier: Natural Language :: English
 Classifier: Programming Language :: Python :: 3.5
 Classifier: Programming Language :: Python :: 3 :: Only
+
+UNKNOWN
+

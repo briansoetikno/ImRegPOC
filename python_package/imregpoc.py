@@ -350,7 +350,7 @@ class imregpoc:
 
     # function around mosaicing
     def convertRectangle(self,perspective=None):
-        if perspective == None:
+        if perspective is None:
             perspective = self.perspective
         height,width = self.orig_cmp.shape
         rectangles = np.float32([[0,0, 0,width-1, height-1,0, height-1,width-1]]).reshape(1,4,2)
@@ -362,7 +362,7 @@ class imregpoc:
         return [xmin,ymin,xmax,ymax]
 
     def stitching(self,perspective=None):
-        if perspective == None:
+        if perspective is None:
             perspective = self.perspective
         xmin,ymin,xmax,ymax = self.convertRectangle()
         hei,wid = self.orig_ref.shape
@@ -414,8 +414,8 @@ class TempMatcher:
             'ORB': cv2.ORB_create(nfeatures=500,scoreType=cv2.ORB_HARRIS_SCORE),
             'AKAZE': cv2.AKAZE_create(),
             'KAZE' : cv2.KAZE_create(),
-            'SIFT' : cv2.xfeatures2d.SIFT_create(),
-            'SURF' : cv2.xfeatures2d.SURF_create()
+            'SIFT' : cv2.SIFT_create()
+            #'SURF' : cv2.SURF_create()
         }.get(name, 0)  
     
     def get_matcher(self,name): # Binary feature or not 
@@ -500,7 +500,7 @@ class TempMatcher:
         return [Trans[0],Trans[1],theta,scale]
 
     def convertRectangle(self,perspective=None):
-        if perspective == None:
+        if perspective is None:
             perspective = self.H
         height,width = self.cmp.shape
         rectangles = np.float32([[0,0, 0,width-1, height-1,0, height-1,width-1]]).reshape(1,4,2)
@@ -512,7 +512,7 @@ class TempMatcher:
         return [xmin,ymin,xmax,ymax]
 
     def stitching(self,perspective=None):
-        if perspective == None:
+        if perspective is None:
             perspective = self.getPerspective()
         xmin,ymin,xmax,ymax = self.convertRectangle(self.getPerspective())
         hei,wid = self.template.shape
